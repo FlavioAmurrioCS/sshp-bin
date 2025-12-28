@@ -9,7 +9,6 @@ from pathlib import Path
 logger = logging.getLogger(__name__)
 
 
-
 def test_help() -> None:
     sshp_bin = Path(sys.executable).parent / "sshp"
     assert sshp_bin.exists(), f"sshp binary not found at {sshp_bin}"

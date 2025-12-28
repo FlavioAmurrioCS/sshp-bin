@@ -13,27 +13,27 @@ requires-python = ">=3.8"
 license-files = ["LICENSE", "sshp/LICENSE"]
 keywords = ["ssh", "parallel", "executor", "sshp"]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Environment :: Console",
-    "Intended Audience :: Developers",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
-    "Programming Language :: Python :: 3.15",
-    "Programming Language :: Python :: 3 :: Only",
-    "Topic :: Software Development :: Quality Assurance",
-    "Topic :: Software Development :: Testing",
-    "Topic :: Software Development :: Libraries"
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: Software Development :: Testing",
+  "Topic :: Software Development :: Libraries",
 ]
 authors = [
-    { name = "Dave Eddy", email = "dave@daveeddy.com" },
-    { name = "Flavio Amurrio", email = "25621374+FlavioAmurrioCS@users.noreply.github.com" },
+  { name = "Dave Eddy", email = "dave@daveeddy.com" },
+  { name = "Flavio Amurrio", email = "25621374+FlavioAmurrioCS@users.noreply.github.com" },
 ]
 dependencies = []
 
@@ -65,6 +65,17 @@ Source = "https://github.com/bahamas10/sshp"
 
 [tool.uv]
 cache-keys = [{ file = "pyproject.toml" }, { file = "sshp/src/**/*.{h,c,hpp,cpp}" }, { file = "CMakeLists.txt" }]
+
+###############################################################################
+# region: cibuildwheel
+###############################################################################
+[tool.cibuildwheel]
+# This project produces a single platform wheel per OS/arch (Tag: py3-none-...).
+# So we only need one "builder" Python per OS.
+build = "cp312-*"
+###############################################################################
+# endregion: cibuildwheel
+###############################################################################
 
 ###############################################################################
 # region: pyright
