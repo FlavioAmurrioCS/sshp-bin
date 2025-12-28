@@ -11,7 +11,7 @@ description = "Parallel SSH Executor"
 readme = "sshp/README.md"
 requires-python = ">=3.8"
 license-files = ["LICENSE", "sshp/LICENSE"]
-keywords = ["ssh", "parallel", "executor", "sshp"]
+keywords = ["ssh", "parallel", "executor", "sshp", "ysap"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Environment :: Console",
@@ -62,6 +62,7 @@ wheel.build-tag = "0" # Can increase this if making changes to packaging only
 Documentation = "https://github.com/bahamas10/sshp#readme"
 Issues = "https://github.com/bahamas10/sshp/issues"
 Source = "https://github.com/bahamas10/sshp"
+Packaging = "https://github.com/FlavioAmurrioCS/sshp-bin"
 
 [tool.uv]
 cache-keys = [{ file = "pyproject.toml" }, { file = "sshp/src/**/*.{h,c,hpp,cpp}" }, { file = "CMakeLists.txt" }]
