@@ -12,7 +12,9 @@ jobs:
   test:
     strategy:
       matrix:
-        os:
+        # https://docs.github.com/en/actions/reference/runners/github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+        os: &runner-os
+          - windows-latest # TODO: REMOVE
           - ubuntu-latest
           - ubuntu-24.04
           - ubuntu-22.04
@@ -48,21 +50,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        # https://docs.github.com/en/actions/reference/runners/github-hosted-runners#standard-github-hosted-runners-for-public-repositories
-        os:
-          - ubuntu-latest
-          - ubuntu-24.04
-          - ubuntu-22.04
-
-          - ubuntu-24.04-arm
-          - ubuntu-22.04-arm
-
-          - macos-15-intel
-
-          - macos-latest
-          - macos-26
-          - macos-15
-          - macos-14
+        os: *runner-os
     steps:
       - uses: actions/checkout@v5
         with:
@@ -70,13 +58,6 @@ jobs:
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v3.3.0
-        # env:
-        #   CIBW_SOME_OPTION: value
-        #   ...
-        # with:
-        #   package-dir: .
-        #   output-dir: wheelhouse
-        #   config-file: "{package}/pyproject.toml"
 
       - uses: actions/upload-artifact@v4
         with:
