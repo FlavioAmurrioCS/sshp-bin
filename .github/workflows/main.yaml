@@ -51,7 +51,7 @@ jobs:
       matrix:
         os: *runner-os
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: true  # Optional, use if you have submodules
 
@@ -67,7 +67,7 @@ jobs:
     name: Make SDist
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with:
         submodules: true  # Optional, use if you have submodules
 
